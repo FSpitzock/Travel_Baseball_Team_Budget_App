@@ -54,10 +54,12 @@ export default function AddTransactionForm() {
       <label>
         Category:
         <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option>Food</option>
-          <option>Rent</option>
-          <option>Transport</option>
-          <option>Entertainment</option>
+          <option>Tournaments</option>
+          <option>Rental Facilities</option>
+          <option>Baseball Equipment</option>
+          <option>Umpire Fees</option>
+          <option>Guest Player Uniform(s)</option>
+          <option>Misc</option>
           <option>Other</option>
         </select>
       </label>

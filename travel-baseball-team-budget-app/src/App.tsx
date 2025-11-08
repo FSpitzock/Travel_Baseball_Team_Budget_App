@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Header from "./components/Layout/Header";
 import Home from "./pages/Home";
 import Expenses from "./pages/TeamExpenses";
 import Funds from "./pages/TeamFunds";
@@ -14,6 +15,7 @@ const App: React.FC = () => {
     <>
     <BudgetProvider>
     <BrowserRouter>
+    <Header/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/TeamExpenses" element={<Expenses />} />
