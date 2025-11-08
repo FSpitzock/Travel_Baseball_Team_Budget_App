@@ -10,6 +10,8 @@
   padding: 1.5em;
   will-change: filter;
   transition: filter 300ms;
+   height: 55px;
+  width: 55px;
 }
 .logo:hover {
   filter: drop-shadow(0 0 2em #646cffaa);
@@ -56,15 +58,10 @@
   gap: 16px;
 }
 
-.header-logo {
-  height: 55px;
-  width: 55px;
-  object-fit: contain;
-}
-
-.header-title {
+.title {
   font-size: 1.5rem;
   font-weight: 700;
   margin: 0;
+  
 }
 
