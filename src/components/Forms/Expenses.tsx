@@ -6,7 +6,7 @@ export default function AddTransactionForm() {
 
   const [type, setType] = useState<"income" | "expense">("expense");
   const [amount, setAmount] = useState("");
-  const [category, setCategory] = useState("Food");
+  const [category, setCategory] = useState("Donations");
   const [note, setNote] = useState("");
 
   function handleSubmit(e: React.FormEvent) {
@@ -30,51 +30,74 @@ export default function AddTransactionForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h3>Add Transaction</h3>
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white shadow-md rounded-lg p-6 max-w-md mx-auto flex flex-col gap-4"
+    >
+      <h3 className="text-xl font-bold text-black mb-4">Add Expense</h3>
 
-      <label>
-        Type:
-        <select value={type} onChange={(e) => setType(e.target.value as "income" | "expense")}>
-          <option value="income">Income</option>
+      {/* Type */}
+      <div className="flex flex-col">
+        <label className="mb-1 font-medium text-black">Type</label>
+        <select
+          value={type}
+          onChange={(e) => setType(e.target.value as "income" | "expense")}
+          className="border border-gray-300 rounded-md p-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          <option value="income">Funds In</option>
           <option value="expense">Expense</option>
         </select>
-      </label>
+      </div>
 
-      <label>
-        Amount:
+      {/* Amount */}
+      <div className="flex flex-col">
+        <label className="mb-1 font-medium text-black">Amount</label>
         <input
           type="number"
           value={amount}
           onChange={(e) => setAmount(e.target.value)}
           required
+          placeholder="Enter amount"
+          className="border border-gray-300 rounded-md p-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
-      </label>
+      </div>
 
-      <label>
-        Category:
-        <select value={category} onChange={(e) => setCategory(e.target.value)}>
-          <option>Tournaments</option>
-          <option>Rental Facilities</option>
+      {/* Category */}
+      <div className="flex flex-col">
+        <label className="mb-1 font-medium text-black">Category</label>
+        <select
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+          className="border border-gray-300 rounded-md p-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          <option>Tournament Cost</option>
           <option>Baseball Equipment</option>
-          <option>Umpire Fees</option>
-          <option>Guest Player Uniform(s)</option>
-          <option>Misc</option>
+          <option>Game Balls</option>
+          <option>Misc Team Expense</option>
+          <option>Guest player uniforms</option>
           <option>Other</option>
         </select>
-      </label>
+      </div>
 
-      <label>
-        Note:
+      {/* Note */}
+      <div className="flex flex-col">
+        <label className="mb-1 font-medium text-black">Note</label>
         <input
           type="text"
           value={note}
           onChange={(e) => setNote(e.target.value)}
           placeholder="Optional"
+          className="border border-gray-300 rounded-md p-2 text-black focus:outline-none focus:ring-2 focus:ring-blue-400"
         />
-      </label>
+      </div>
 
-      <button type="submit">Add</button>
+      {/* Submit Button */}
+      <button
+        type="submit"
+        className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-md hover:bg-blue-600 transition-colors"
+      >
+        Add
+      </button>
     </form>
   );
 }

@@ -4,16 +4,19 @@ import OutlawLogo from "../../assets/OutlawLogo.png";
 
 const Header: React.FC = () => {
   return (
-    <header style={styles.header}>
+    <header className="flex items-center justify-between px-6 py-4 bg-white shadow-md sticky top-0 z-20">
+      
       {/* Left Section: Logo + Title */}
-      <div style={styles.left}>
+      <div className="flex items-center gap-4">
         <img
           src={OutlawLogo}
           alt="Oviedo Outlaw Logo"
-          style={styles.logo}
+          className="w-20 h-20 object-contain"
         />
 
-        <h2 style={styles.title}>Travel Baseball Team Budget</h2>
+        <h2 className="text-2xl font-bold text-gray-800">
+          Team Budget
+        </h2>
       </div>
 
       {/* Right Section: Navigation */}
@@ -23,39 +26,3 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-
-/* ============================
-   ✅ Inline Style Objects
-============================ */
-const styles = {
-  header: {
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: "15px 30px",
-    backgroundColor: "#ffffff",
-    boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-    position: "sticky" as const,
-    top: 0,
-    zIndex: 10,
-  },
-
-  left: {
-    display: "flex",
-    alignItems: "center",
-    gap: "20px",
-  },
-
-  logo: {
-    width: "100px",
-    height: "100px",
-    objectFit: "contain",
-  },
-
-  title: {
-    fontSize: "1.8rem",
-    fontWeight: 700,
-    margin: 0,
-    color: "#222",
-  },
-};
